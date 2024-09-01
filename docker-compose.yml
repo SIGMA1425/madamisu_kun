@@ -1,0 +1,12 @@
+version: '3'
+services:
+  discord:
+    restart: always
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: 'discord'
+    working_dir: '/root/'     # コンテナの中に入った直後のディレクトリ
+    tty: true
+    volumes:
+      - ./app:/root/app       #./appとコンテナの/root/appを同期
